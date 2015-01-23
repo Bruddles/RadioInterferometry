@@ -189,3 +189,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 
+## JavaScript
+test/**/*.js
+src/**/*.js

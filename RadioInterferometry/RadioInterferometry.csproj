@@ -23,11 +23,73 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
+    <Content Include="bower_components\dsp.js\.gitignore" />
+    <Content Include="bower_components\dsp.js\bench\bench.js" />
+    <Content Include="bower_components\dsp.js\bench\deinterleave.js" />
+    <Content Include="bower_components\dsp.js\bench\dft.js" />
+    <Content Include="bower_components\dsp.js\bench\fft.js" />
+    <Content Include="bower_components\dsp.js\bench\rfft.js" />
+    <Content Include="bower_components\dsp.js\dsp.js" />
+    <Content Include="bower_components\dsp.js\examples\biquad.html" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_diagonals-small_40_db4865_40x40.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_diagonals-small_50_93c3cd_40x40.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_diagonals-small_50_ff3853_40x40.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_diagonals-small_75_ccd232_40x40.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_dots-medium_80_ffff38_4x4.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_dots-small_35_35414f_2x2.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_flat_75_ba9217_40x100.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-bg_white-lines_85_f7f7ba_40x100.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-icons_454545_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-icons_88a206_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-icons_c02669_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-icons_e1e463_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-icons_ffeb33_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\hot-sneaks\jquery-ui-1.8.custom.css" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="bower_components\dsp.js\examples\css\smoothness\jquery-ui-1.7.2.custom.css" />
+    <Content Include="bower_components\dsp.js\examples\fft.html" />
+    <Content Include="bower_components\dsp.js\examples\filter.html" />
+    <Content Include="bower_components\dsp.js\examples\grapheq.html" />
+    <Content Include="bower_components\dsp.js\examples\index.html" />
+    <Content Include="bower_components\dsp.js\examples\js\init.js" />
+    <Content Include="bower_components\dsp.js\examples\js\jquery-1.4.2.min.js" />
+    <Content Include="bower_components\dsp.js\examples\js\jquery-ui-1.8.custom.min.js" />
+    <Content Include="bower_components\dsp.js\examples\js\processing.js" />
+    <Content Include="bower_components\dsp.js\examples\nowave.html" />
+    <Content Include="bower_components\dsp.js\examples\rfft.html" />
+    <Content Include="bower_components\dsp.js\examples\sampler.html" />
+    <Content Include="bower_components\dsp.js\examples\squarewave.html" />
+    <Content Include="bower_components\dsp.js\examples\synthesizer.html" />
+    <Content Include="bower_components\dsp.js\examples\vocoder.html" />
+    <Content Include="bower_components\dsp.js\test\adsr-test.js" />
+    <Content Include="bower_components\dsp.js\test\audio-harness.js" />
+    <Content Include="bower_components\dsp.js\test\beatdetect-test.js" />
+    <Content Include="bower_components\dsp.js\test\beatdetektor.js" />
+    <Content Include="bower_components\dsp.js\test\dft-test.js" />
+    <Content Include="bower_components\dsp.js\test\fft-test.js" />
+    <Content Include="bower_components\dsp.js\test\filter-test.js" />
+    <Content Include="bower_components\dsp.js\test\iirfilter-test.js" />
+    <Content Include="bower_components\dsp.js\test\multidelay-test.js" />
+    <Content Include="bower_components\dsp.js\test\oscillator-test.js" />
+    <Content Include="bower_components\dsp.js\test\reverb-test.js" />
+    <Content Include="bower_components\dsp.js\test\samples.js" />
     <Content Include="dist\app.js" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
-    <Content Include="test\test-greeting.js" />
-    <Content Include="test\test-load.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +97,10 @@
     <Content Include=".jshintrc" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="bower_components\dsp.js\.bower.json" />
+    <Content Include="bower_components\dsp.js\LICENSE" />
+    <Content Include="bower_components\dsp.js\Makefile" />
+    <Content Include="bower_components\dsp.js\README" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -44,7 +110,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app.ts" />
+    <TypeScriptCompile Include="src\classes\Oscillator\OscillatorClass.ts" />
     <TypeScriptCompile Include="typings\dsp\dsp.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="test\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
@@ -70,13 +140,14 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties package_1json__JSONSchema="http://json.schemastore.org/package" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptTarget>ES6</TypeScriptTarget>
-    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
+    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>

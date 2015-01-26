@@ -111,6 +111,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app.ts" />
     <TypeScriptCompile Include="src\classes\Oscillator\OscillatorClass.ts" />
+    <TypeScriptCompile Include="src\classes\Oscillator\OscillatorTypeEnum.ts" />
     <TypeScriptCompile Include="typings\dsp\dsp.d.ts" />
   </ItemGroup>
   <ItemGroup>

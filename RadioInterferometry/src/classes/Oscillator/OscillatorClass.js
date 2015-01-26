@@ -21,20 +21,20 @@ var Oscillator = (function () {
         this._signal = new Float32Array(bufferSize);
         this._envelope = null;
         switch (type) {
-            case 1 /* Cosine */:
+            case OscillatorType.Cosine:
                 this._func = Oscillator.Cosine;
                 break;
-            case 2 /* Triangle */:
+            case OscillatorType.Triangle:
                 this._func = Oscillator.Triangle;
                 break;
-            case 3 /* Saw */:
+            case OscillatorType.Saw:
                 this._func = Oscillator.Saw;
                 break;
-            case 4 /* Square */:
+            case OscillatorType.Square:
                 this._func = Oscillator.Square;
                 break;
             default:
-            case 0 /* Sine */:
+            case OscillatorType.Sine:
                 this._func = Oscillator.Sine;
                 break;
         }
@@ -54,23 +54,20 @@ var Oscillator = (function () {
             Oscillator.waveTable[this._func][i] = this._func(i * waveTableHz / this._sampleRate);
         }
     };
-    Oscillator.Sine = function (step) {
-        return Math.sin(2 * Math.PI * step);
+    Oscillator.Sine = function (step, phi) {
+        return Math.sin((2 * Math.PI * step) + phi ? phi : 0);
     };
-    Oscillator.Cosine = function (step) {
-        return Math.cos(2 * Math.PI * step);
+    Oscillator.Cosine = function (step, phi) {
+        return Math.cos((2 * Math.PI * step) + phi ? phi : 0);
     };
-    Oscillator.Square = function (step) {
+    Oscillator.Square = function (step, phi) {
         return step < 0.5 ? 1 : -1;
     };
-    Oscillator.Saw = function (step) {
+    Oscillator.Saw = function (step, phi) {
         return 2 * (step - Math.round(step));
     };
-    Oscillator.Triangle = function (step) {
+    Oscillator.Triangle = function (step, phi) {
         return 1 - 4 * Math.abs(Math.round(step) - step);
-    };
-    Oscillator.Pulse = function (step) {
-        // stub
     };
     return Oscillator;
 })();

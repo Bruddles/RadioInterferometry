@@ -192,3 +192,6 @@ ModelManifest.xml
 ## JavaScript
 test/**/*.js
 src/**/*.js
+
+test/**/*.map.js
+src/**/*.map.js

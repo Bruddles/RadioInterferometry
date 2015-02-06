@@ -21,12 +21,39 @@
         };
 
         private _frequency: number;
+        get frequency(): number {
+            return this._frequency;
+        }
+          
         private _phaseDifference: number;
+        get phaseDifference(): number {
+            return this._phaseDifference;
+        }
+
         private _amplitude: number;
+        get amplitude(): number {
+            return this._amplitude;
+        }
+
         private _timeStep: number;
+        get timeStep(): number {
+            return this._timeStep;
+        }
+
         private _bufferSize: number;
+        get bufferSize(): number {
+            return this._bufferSize;
+        }
+
         private _signal: { [time: number]: number } = [];
+        get signal(): { [time: number]: number } {
+            return this._signal;
+        }
+
         private _func: any;
+        get func(): number {
+            return this._func;
+        }
 
         /**
     * Oscillator class for generating and modifying signals
@@ -74,8 +101,10 @@
 
         private _generate() {
             for (var i = -1 * this._bufferSize; i < this._bufferSize; i++) {
-                var time: number = i * this._timeStep;
-                this._signal[time] = this._amplitude * this._func(time, this._phaseDifference);
+                var time: number = i * this._timeStep,
+                    theta: number = time * this._frequency;
+
+                this._signal[time] = this._amplitude * this._func(theta, this._phaseDifference);
             }
         }
 
@@ -90,6 +119,15 @@
         public setPhaseDifference(phaseDifference: number) {
             this._phaseDifference = phaseDifference;
         }
+
+        public mix(oscillator: Oscillator, lowBand: boolean): Oscillator {
+            if (lowBand) {
+                return new Oscillator(OscillatorType.Cosine, (this._frequency - oscillator.frequency), (this._phaseDifference - oscillator.phaseDifference), (0.5 * this._amplitude * oscillator.amplitude), this._bufferSize);
+            } else {
+                return new Oscillator(OscillatorType.Cosine, (this._frequency + oscillator.frequency), (this._phaseDifference + oscillator.phaseDifference), (0.5 * this._amplitude * oscillator.amplitude), this._bufferSize);
+            }
+        }
+
     }
 }
 

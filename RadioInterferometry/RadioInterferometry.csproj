@@ -33,6 +33,8 @@
     <Content Include=".jshintrc" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="typings\d3\d3-tests.ts.tscparams" />
+    <Content Include="typings\d3\plugins\d3.superformula-tests.ts.tscparams" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -45,9 +47,12 @@
     <TypeScriptCompile Include="src\FFT\FFT.ts" />
     <TypeScriptCompile Include="src\Oscillator\Oscillator.ts" />
     <TypeScriptCompile Include="src\Oscillator\OscillatorTypeEnum.ts" />
+    <TypeScriptCompile Include="typings\d3\d3-tests.ts" />
+    <TypeScriptCompile Include="typings\d3\d3.d.ts" />
+    <TypeScriptCompile Include="typings\d3\plugins\d3.superformula-tests.ts" />
+    <TypeScriptCompile Include="typings\d3\plugins\d3.superformula.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\classes\" />
     <Folder Include="test\" />
   </ItemGroup>
   <PropertyGroup>

@@ -45,9 +45,14 @@
             return this._sampleRate;
         }
 
-        private _signal: Float32Array;
-        get signal(): { [time: number]: number } {
-            return this._signal;
+        private _signalY: Float32Array;
+        get signalY(): Float32Array {
+            return this._signalY;
+        }
+
+        private _signalX: Float32Array;
+        get signalX(): Float32Array {
+            return this._signalX;
         }
 
         private _func: any;
@@ -62,7 +67,8 @@
             this._bufferSize = bufferSize;
             this._sampleRate = sampleRate;
 
-            this._signal = new Float32Array(bufferSize);
+            this._signalY = new Float32Array(bufferSize);
+            this._signalX = new Float32Array(bufferSize);
 
             switch (type) {
             case OscillatorType.Cosine:
@@ -94,7 +100,8 @@
                 var time: number = i / this._sampleRate,
                     theta: number = time * this._frequency;
 
-                this._signal[i] = this._amplitude * this._func(theta, this._phaseDifference);
+                this._signalY[i] = this._amplitude * this._func(theta, this._phaseDifference);
+                this._signalX[i] = time;
             }
         }
 

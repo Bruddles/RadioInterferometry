@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app.ts" />
-    <TypeScriptCompile Include="src\Oscillator\OscillatorClass.ts" />
+    <TypeScriptCompile Include="src\FFT\FFT.ts" />
+    <TypeScriptCompile Include="src\Oscillator\Oscillator.ts" />
     <TypeScriptCompile Include="src\Oscillator\OscillatorTypeEnum.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +81,8 @@
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptTarget>ES5</TypeScriptTarget>
-    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
+    <TypeScriptModuleKind>none</TypeScriptModuleKind>
+    <TypeScriptOutFile>dist/app.js</TypeScriptOutFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>

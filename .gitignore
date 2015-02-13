@@ -6,3 +6,4 @@
 .vs/RadioInterferometryWeb/vbcs.cache/edbtmp.log
 .vs/RadioInterferometryWeb/vbcs.cache/storage.ide
 *.map
+RadioInterferometry/dist/app.js

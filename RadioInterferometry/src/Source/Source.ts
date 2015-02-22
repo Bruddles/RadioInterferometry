@@ -1,11 +1,11 @@
 ﻿module RadioInterferometry {
     export class Source {
         static Point(step: number, offset: number, width?: number) {
-            return Math.floor(step) === Math.floor(offset) ? 1 : 0;
+            return Math.floor(step) === Math.floor(offset) ? 1 : 0; //TODO rounding down dont work / no negative numbers
         }
 
         static Gaussian(step: number, offset: number, width: number) {
-            return Math.exp(-Math.pow((step - offset), 2) / (2*(Math.pow(width, 2))));
+            return Math.exp(-Math.pow((step - offset), 2) / (2*(Math.pow(width, 2)))); 
         }
 
         private _amplitude: number;
@@ -28,9 +28,9 @@
             return this._bufferSize;
         }
 
-        private _sampleRate: number;
-        get sampleRate(): number {
-            return this._sampleRate;
+        private _resolution: number;
+        get resolution(): number {
+            return this._resolution;
         }
 
         private _signalY: Float32Array;
@@ -48,12 +48,12 @@
             return this._func;
         }
 
-        constructor(type: SourceType, amplitude: number, offset: number, width: number, bufferSize: number, sampleRate: number) {
+        constructor(type: SourceType, amplitude: number, offset: number, width: number, bufferSize: number, resolution: number) {
             this._amplitude = amplitude;
             this._offset = offset;
             this._width = width;
             this._bufferSize = bufferSize;
-            this._sampleRate = sampleRate;
+            this._resolution = resolution;
 
             this._signalY = new Float32Array(bufferSize);
             this._signalX = new Float32Array(bufferSize);
@@ -71,8 +71,8 @@
         }
 
         private _generate() {
-            for (var i = - this._bufferSize /2; i < this._bufferSize/2; i++) {
-                var theta: number = i / this._sampleRate;
+            for (var i = -(this._bufferSize / 2); i < this._bufferSize/2; i++) {
+                var theta: number = i * this._resolution;
 
                 this._signalY[i] = this._amplitude * this._func(theta, this._offset, this._width);
                 this._signalX[i] = theta;

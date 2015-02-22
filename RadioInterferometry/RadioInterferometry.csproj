@@ -35,6 +35,7 @@
     <Content Include="README.md" />
     <Content Include="typings\flot\jquery.flot.d.ts.tscparams" />
     <Content Include="typings\jquery\jquery-tests.ts.tscparams" />
+    <Content Include="styles\index.scss" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -45,6 +46,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app.ts" />
     <TypeScriptCompile Include="src\FFT\FFT.ts" />
+    <TypeScriptCompile Include="src\Source\Source.ts" />
+    <TypeScriptCompile Include="src\Source\SourceTypeEnum.ts" />
     <TypeScriptCompile Include="src\Oscillator\Oscillator.ts" />
     <TypeScriptCompile Include="src\Oscillator\OscillatorTypeEnum.ts" />
     <TypeScriptCompile Include="typings\flot\jquery.flot.d.ts" />

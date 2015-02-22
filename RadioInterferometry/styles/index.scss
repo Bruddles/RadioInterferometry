@@ -1,0 +1,22 @@
+﻿body {
+    .graphs {
+        width: 80%;
+        height: 100vh;
+        float: left;
+
+        .grid {
+            display: flex;
+        }
+
+        .cell {
+            -ms-flex: 1;
+            flex: 1;
+        }
+    }
+
+    .controls {
+        width: 20%;
+        height: 100vh;
+        float: right;
+    }
+}

@@ -13,10 +13,22 @@ for (var i = 0; i < a.signalX.length; i++) {
 }
 
 var options = {
-    series: {
-        lines: { show: true },
-        points: { show: true }
-    }
+    axisLabels: {
+        show: true
+    },
+    xaxes: [{
+        axisLabel: 'Time / s'
+    }],
+    yaxes: [{
+        position: 'left',
+        axisLabel: 'Amplitude'
+    }]
 };
 
-var plot = $.plot($('#graph'), [data]);
+var source = $.plot($('#source'), [data], options),
+    input1 = $.plot($('#input1'), [data], options),
+    input2 = $.plot($('#input2'), [data], options),
+    localOscillator = $.plot($('#localOscillator'), [data], options),
+    mixed1 = $.plot($('#mixed1'), [data], options),
+    mixed2 = $.plot($('#mixed2'), [data], options),
+    output = $.plot($('#output'), [data], options);

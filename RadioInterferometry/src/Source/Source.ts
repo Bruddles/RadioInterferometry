@@ -72,10 +72,11 @@
 
         private _generate() {
             for (var i = -(this._bufferSize / 2); i < this._bufferSize/2; i++) {
-                var theta: number = i * this._resolution;
+                var ii = i + this._bufferSize / 2,
+                    theta: number = i * this._resolution;
 
-                this._signalY[i] = this._amplitude * this._func(theta, this._offset, this._width);
-                this._signalX[i] = theta;
+                this._signalY[ii] = this._amplitude * this._func(theta, this._offset, this._width);
+                this._signalX[ii] = theta;
             }
         }
 
@@ -89,6 +90,33 @@
 
         public setWidth(width: number) {
             this._width = width;
+        }
+
+        public generateWaves(baseline: number, horizonAngle: number, frequency: number, sourceWidth: number): Array<Oscillator> {
+            if (sourceWidth === 0) {
+                var phaseDiff: number = this._calculatePhaseDifference(baseline, horizonAngle, frequency);
+                return [
+                    new Oscillator(OscillatorType.Cosine, frequency, horizonAngle >= (Math.PI / 2) ? 0 : phaseDiff, this.amplitude, 2048, 44100),
+                    new Oscillator(OscillatorType.Cosine, frequency, horizonAngle <= (Math.PI / 2) ? 0 : phaseDiff, this.amplitude, 2048, 44100)
+                ];
+            } else {
+                //not correct? maybe
+                var phaseDiff: number = this._calculatePhaseDifference(baseline, horizonAngle, frequency),
+                    phaseDiffA: number = this._calculatePhaseDifference(baseline, horizonAngle - sourceWidth / 2, frequency),
+                    phaseDiffB: number = this._calculatePhaseDifference(baseline, horizonAngle + sourceWidth / 2, frequency),
+                    phaseDiffC: number = (phaseDiffA - phaseDiffB) / 2,
+                    amplitude: number = -2 * this.amplitude * Math.cos(phaseDiffC);
+
+                return [
+                    new Oscillator(OscillatorType.Cosine, frequency, horizonAngle >= (Math.PI / 2) ? 0 : phaseDiff + phaseDiffC, amplitude, 2048, 44100),
+                    new Oscillator(OscillatorType.Cosine, frequency, horizonAngle <= (Math.PI / 2) ? 0 : phaseDiff + phaseDiffC, amplitude, 2048, 44100)
+                ];
+
+            }
+        }
+
+        private _calculatePhaseDifference(baseline: number, horizonAngle: number, frequency: number): number {
+            return (2 * (Math.PI)) * (baseline / (c / frequency)) * Math.cos(horizonAngle);
         }
     }
 }
